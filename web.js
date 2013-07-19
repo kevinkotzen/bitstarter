@@ -2,10 +2,10 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-var fs = require('fs');
-var filename = "index.html";
-var fileread = fs.readFileSync(filename, "utf8");
-
+//var fs = require('fs');
+//var filename = "index.html";
+//var fileread = fs.readFileSync(filename).toString();
+var fileread = "Hello World !!!";
 
 
 app.get('/', function(request, response) {
