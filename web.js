@@ -1,16 +1,16 @@
 var express = require('express');
+var fs = require('fs');
+var htmlfile = "index.html";
+
 var app = express.createServer(express.logger());
 
-var fs = require('fs');
-var fr = fs.readFileSync('index.html');
-var txt = fr.toString();
-
-
-//var txt = 'Helllow World 2';
-
 app.get('/', function(request, response) {
-  response.send(txt);
+
+  var html = fs.readFileSync(htmlfile).toString();
+  response.send(html);
+
 });
+
 
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
